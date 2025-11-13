@@ -1,0 +1,1482 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="george_v0_new_hands">
+    <link name="torso_stand">
+        <inertial>
+            <origin xyz="0.002194195689316736 0.0006867226976400531 0.7272952926587591" rpy="0.0 0.0 0.0" />
+            <mass value="5.369807233336911" />
+            <inertia ixx="1.4902046270940268" iyy="1.518322188840544" izz="0.09384690813698011" ixy="1.3552194327245947e-07" iyz="-5.506228252906767e-08" ixz="-3.265148149529662e-07" />
+        </inertial>
+        <visual name="torso_stand_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/torso_stand.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="torso_stand_collision">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/torso_stand.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="chest_plate">
+        <inertial>
+            <origin xyz="-0.00035751280858317664 0.023550688588085816 -0.2390472825734098" rpy="0.0 -0.0 0.0" />
+            <mass value="0.9493935509325306" />
+            <inertia ixx="0.020461183286691886" iyy="0.028646624676279098" izz="0.00846840329489277" ixy="5.89796260604117e-06" iyz="0.0007809368172549958" ixz="-9.007095071378313e-05" />
+        </inertial>
+        <visual name="chest_plate_visual">
+            <origin xyz="-0.019999999783709633 0.012999997302535472 0.01600000000000051" rpy="3.141592653589793 -0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/chest_plate.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="chest_plate_collision">
+            <origin xyz="-0.019999999783709633 0.012999997302535472 0.01600000000000051" rpy="3.141592653589793 -0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/chest_plate.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="back_plate">
+        <inertial>
+            <origin xyz="0.00042883467366062604 0.2517968304963611 0.007962109813572926" rpy="0.0 -0.0 0.0" />
+            <mass value="0.8845490595747714" />
+            <inertia ixx="0.01867971090605436" iyy="0.007764277501340891" izz="0.026412317021868192" ixy="-6.874708888326586e-05" iyz="2.919174935907265e-05" ixz="-1.280510582615333e-07" />
+        </inertial>
+        <visual name="back_plate_visual">
+            <origin xyz="2.1628850571664415e-10 0.5089999999999896 0.003000002697464268" rpy="-1.5707963267948966 6.123024972620652e-14 3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/back_plate.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="back_plate_collision">
+            <origin xyz="2.1628850571664415e-10 0.5089999999999896 0.003000002697464268" rpy="-1.5707963267948966 6.123024972620652e-14 3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/back_plate.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_side_cover">
+        <inertial>
+            <origin xyz="0.09301386011745198 0.005730564972047283 0.19406267263109925" rpy="0.0 -0.0 0.0" />
+            <mass value="0.4685583634976608" />
+            <inertia ixx="0.011038034336770197" iyy="0.012480353584774284" izz="0.0016831244371919782" ixy="9.775325261496453e-06" iyz="0.0008497604313841139" ixz="-3.825169717498225e-06" />
+        </inertial>
+        <visual name="right_side_cover_visual">
+            <origin xyz="0.07299999730253731 -0.04382668044030103 0.478075817771916" rpy="3.141592653589793 -0.0 3.061616997867933e-16" />
+            <geometry>
+                <mesh filename="meshes/right_side_cover.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_side_cover_collision">
+            <origin xyz="0.07299999730253731 -0.04382668044030103 0.478075817771916" rpy="3.141592653589793 -0.0 3.061616997867933e-16" />
+            <geometry>
+                <mesh filename="meshes/right_side_cover.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="neck_cover">
+        <inertial>
+            <origin xyz="-9.63409614610361e-06 -0.08200848486122496 0.019696377875258405" rpy="0.0 -0.0 0.0" />
+            <mass value="0.5282112991251413" />
+            <inertia ixx="0.0019506945196303693" iyy="0.011025515375718387" izz="0.01258816972639316" ixy="-1.4542448104914812e-07" iyz="1.7839042084280034e-05" ixz="-7.670597527596398e-09" />
+        </inertial>
+        <visual name="neck_cover_visual">
+            <origin xyz="0.03953890888419654 -0.3783268640703197 -0.027075817771916207" rpy="0.0 -0.0 3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/neck_cover.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="neck_cover_collision">
+            <origin xyz="0.03953890888419654 -0.3783268640703197 -0.027075817771916207" rpy="0.0 -0.0 3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/neck_cover.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_side_cover">
+        <inertial>
+            <origin xyz="-0.09319168972058119 -0.005733349810290171 0.1941265068251586" rpy="0.0 -0.0 0.0" />
+            <mass value="0.4681548634976622" />
+            <inertia ixx="0.011035800613458435" iyy="0.012477626698569666" izz="0.0016826211634928898" ixy="-9.47124400481932e-06" iyz="-0.0008498570577359088" ixz="-6.565296094389918e-07" />
+        </inertial>
+        <visual name="left_side_cover_visual">
+            <origin xyz="-0.07300000269746572 0.043826680007721934 0.47807581777191616" rpy="3.141592653589793 -0.0 -3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/left_side_cover.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_side_cover_collision">
+            <origin xyz="-0.07300000269746572 0.043826680007721934 0.47807581777191616" rpy="3.141592653589793 -0.0 -3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/left_side_cover.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="head_extrusion_bracket">
+        <inertial>
+            <origin xyz="1.0892008989182855e-10 -0.007377714866333191 0.0035490448142189734" rpy="0.0 -0.0 0.0" />
+            <mass value="0.06420012207011712" />
+            <inertia ixx="4.22943443667001e-05" iyy="3.528854153464489e-05" izz="6.44091017151149e-05" ixy="-9.104253673652626e-14" iyz="1.6579879633835896e-06" ixz="-1.4565071696469312e-13" />
+        </inertial>
+        <visual name="head_extrusion_bracket_visual">
+            <origin xyz="-0.009999999914103516 -0.02999999758193214 5.684341886080802e-16" rpy="0.0 -0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/head_extrusion_bracket.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="head_extrusion_bracket_collision">
+            <origin xyz="-0.009999999914103516 -0.02999999758193214 5.684341886080802e-16" rpy="0.0 -0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/head_extrusion_bracket.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="head_rotation_servo">
+        <inertial>
+            <origin xyz="-2.843570218183378e-07 0.010547788251055606 0.020889728415562844" rpy="0.0 -0.0 0.0" />
+            <mass value="0.05886681342596842" />
+            <inertia ixx="1.650626254573461e-05" iyy="1.054682629483827e-05" izz="9.776676222048052e-06" ixy="-1.4701573825717073e-11" iyz="3.627612315755578e-07" ixz="-3.456062061426949e-11" />
+        </inertial>
+        <visual name="head_rotation_servo_visual">
+            <origin xyz="-0.009999999765091945 0.011000002567079465 0.020250000000000625" rpy="0.0 -0.0 -1.5707963267948966" />
+            <geometry>
+                <mesh filename="meshes/head_rotation_servo.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="head_rotation_servo_collision">
+            <origin xyz="-0.009999999765091945 0.011000002567079465 0.020250000000000625" rpy="0.0 -0.0 -1.5707963267948966" />
+            <geometry>
+                <mesh filename="meshes/head_rotation_servo.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="head_rotation_bracket">
+        <inertial>
+            <origin xyz="0.0005298672676009539 2.5670794712162604e-09 0.007310110496231061" rpy="0.0 -0.0 0.0" />
+            <mass value="0.008923196523708278" />
+            <inertia ixx="8.977180115943284e-07" iyy="3.3579604154163056e-06" izz="3.0794065143971316e-06" ixy="1.4293680984916318e-21" iyz="-5.421010862427522e-20" ixz="-8.170999418071113e-08" />
+        </inertial>
+        <visual name="head_rotation_bracket_visual">
+            <origin xyz="2.3490805661774415e-10 0.01000000256707948 0.013450000000000557" rpy="-3.141592653589793 -3.292839058792458e-32 4.314083075427408e-31" />
+            <geometry>
+                <mesh filename="meshes/head_rotation_bracket.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="head_rotation_bracket_collision">
+            <origin xyz="2.3490805661774415e-10 0.01000000256707948 0.013450000000000557" rpy="-3.141592653589793 -3.292839058792458e-32 4.314083075427408e-31" />
+            <geometry>
+                <mesh filename="meshes/head_rotation_bracket.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="head_flexion_servo">
+        <inertial>
+            <origin xyz="0.018149129936665533 0.0075002833041435185 0.0200914131356764" rpy="0.0 -0.0 0.0" />
+            <mass value="0.059986565649669026" />
+            <inertia ixx="1.1304901868799102e-05" iyy="1.7386620476400605e-05" izz="9.95330830788621e-06" ixy="-1.2356993683501627e-11" iyz="-2.8679439446575985e-11" ixz="6.397920840705662e-08" />
+        </inertial>
+        <visual name="head_flexion_servo_visual">
+            <origin xyz="0.01750000000000142 0.017500002567078957 0.020249999765092327" rpy="-3.1415926535897696 2.2179107083768857e-87 -1.2246467991513924e-16" />
+            <geometry>
+                <mesh filename="meshes/head_flexion_servo.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="head_flexion_servo_collision">
+            <origin xyz="0.01750000000000142 0.017500002567078957 0.020249999765092327" rpy="-3.1415926535897696 2.2179107083768857e-87 -1.2246467991513924e-16" />
+            <geometry>
+                <mesh filename="meshes/head_flexion_servo.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="head_flexion_bracket">
+        <inertial>
+            <origin xyz="-0.025999999765105742 3.397936269591284e-06 0.017138320696761297" rpy="0.0 -0.0 1.3037220958359596e-91" />
+            <mass value="0.01200983647161885" />
+            <inertia ixx="1.8219031836033683e-06" iyy="7.780138548862253e-06" izz="6.778440603066011e-06" ixy="-1.2970192004831474e-20" iyz="-3.572822579781497e-10" ixz="1.4365678785432934e-18" />
+        </inertial>
+        <visual name="head_flexion_bracket_visual">
+            <origin xyz="-0.025999999765092083 0.010000002567079556 0.008450000000000273" rpy="-1.2246467991513604e-16 9.86076131526426e-32 -3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/head_flexion_bracket.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="head_flexion_bracket_collision">
+            <origin xyz="-0.025999999765092083 0.010000002567079556 0.008450000000000273" rpy="-1.2246467991513604e-16 9.86076131526426e-32 -3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/head_flexion_bracket.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="head">
+        <inertial>
+            <origin xyz="-1.9997343507608678e-05 -0.033820094087143523 0.04880409369610618" rpy="0.0 -0.0 0.0" />
+            <mass value="0.6966279372850768" />
+            <inertia ixx="0.0037879330331314076" iyy="0.0027768134096881614" izz="0.003626815710132494" ixy="5.779953284189597e-07" iyz="-0.0003069812816604012" ixz="-7.071166232420611e-07" />
+        </inertial>
+        <visual name="head_visual">
+            <origin xyz="-0.002827586819126573 -0.013619315792393472 -0.1461861575431101" rpy="-7.498798913334763e-33 -1.224646799151392e-16 1.5707963267948968" />
+            <geometry>
+                <mesh filename="meshes/head.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="head_collision">
+            <origin xyz="-0.002827586819126573 -0.013619315792393472 -0.1461861575431101" rpy="-7.498798913334763e-33 -1.224646799151392e-16 1.5707963267948968" />
+            <geometry>
+                <mesh filename="meshes/head.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="shoulder_assembly_left">
+        <inertial>
+            <origin xyz="0.0009619451417285063 -0.0037948901495468736 0.022636801617362607" rpy="0.0 -0.0 0.0" />
+            <mass value="0.4483182123010635" />
+            <inertia ixx="0.0005711390096342153" iyy="0.0005338316644539765" izz="0.0003775353980581819" ixy="1.7540636565693737e-05" iyz="-1.61357920202201e-05" ixz="5.795855548690332e-06" />
+        </inertial>
+        <visual name="shoulder_assembly_left_visual">
+            <origin xyz="0.015050000000010754 0.01504999730253545 2.1628967061815276e-10" rpy="0.0 -1.665334536938114e-16 3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/shoulder_assembly_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="shoulder_assembly_left_collision">
+            <origin xyz="0.015050000000010754 0.01504999730253545 2.1628967061815276e-10" rpy="0.0 -1.665334536938114e-16 3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/shoulder_assembly_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="shoulder_brackets_left">
+        <inertial>
+            <origin xyz="2.163034906743633e-10 -0.032999999999989885 -0.031250002697478595" rpy="0.0 -0.0 0.0" />
+            <mass value="0.037288440724455946" />
+            <inertia ixx="2.2269362735388702e-05" iyy="2.8150346860294176e-05" izz="2.226936273537483e-05" ixy="-3.4694469519536134e-18" iyz="5.421010862427521e-19" ixz="-1.0164395367051603e-20" />
+        </inertial>
+        <visual name="shoulder_brackets_left_visual">
+            <origin xyz="0.03125000021628903 -0.06599999999998943 -0.03125000269746446" rpy="-1.5707963267948966 3.947974498985534e-15 1.570796326794897" />
+            <geometry>
+                <mesh filename="meshes/shoulder_brackets_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="shoulder_brackets_left_collision">
+            <origin xyz="0.03125000021628903 -0.06599999999998943 -0.03125000269746446" rpy="-1.5707963267948966 3.947974498985534e-15 1.570796326794897" />
+            <geometry>
+                <mesh filename="meshes/shoulder_brackets_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="upper_limb_assembly_left">
+        <inertial>
+            <origin xyz="-0.03147969194746718 0.0067823932306045566 -0.11477245611966766" rpy="0.0 -0.0 0.0" />
+            <mass value="1.1987116177269712" />
+            <inertia ixx="0.006467660661359174" iyy="0.006374556433057066" izz="0.0015782273940242865" ixy="7.752481744188569e-06" iyz="0.00030162183089571347" ixz="7.73031778256161e-05" />
+        </inertial>
+        <visual name="upper_limb_assembly_left_visual">
+            <origin xyz="-0.04654999978371109 -0.015049997302535777 -0.07199999999998938" rpy="-3.9479744989855084e-15 -2.8899813360854595e-16 2.2038801539612017e-29" />
+            <geometry>
+                <mesh filename="meshes/upper_limb_assembly_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="upper_limb_assembly_left_collision">
+            <origin xyz="-0.04654999978371109 -0.015049997302535777 -0.07199999999998938" rpy="-3.9479744989855084e-15 -2.8899813360854595e-16 2.2038801539612017e-29" />
+            <geometry>
+                <mesh filename="meshes/upper_limb_assembly_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="elbow_rot_brack_left">
+        <inertial>
+            <origin xyz="2.1627723612027696e-10 2.697463369685793e-09 -0.010187874165251572" rpy="0.0 -0.0 -1.929499365938391e-62" />
+            <mass value="0.018644220362227924" />
+            <inertia ixx="3.653623964209457e-06" iyy="1.4745467846227073e-05" izz="1.4075173430146875e-05" ixy="-2.3716922523120485e-20" iyz="-6.097177426014846e-20" ixz="3.470670258132121e-18" />
+        </inertial>
+        <visual name="elbow_rot_brack_left_visual">
+            <origin xyz="-0.031249999783694377 2.6974632883619564e-09 -0.03299999999998434" rpy="3.141592653589793 -1.5707963267948917 0" />
+            <geometry>
+                <mesh filename="meshes/elbow_rot_brack_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="elbow_rot_brack_left_collision">
+            <origin xyz="-0.031249999783694377 2.6974632883619564e-09 -0.03299999999998434" rpy="3.141592653589793 -1.5707963267948917 0" />
+            <geometry>
+                <mesh filename="meshes/elbow_rot_brack_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="forearm_assembly_left">
+        <inertial>
+            <origin xyz="0.031615843570986936 0.10049706554007262 -0.0026997360635976973" rpy="0.0 -0.0 0.0" />
+            <mass value="1.0031917849525622" />
+            <inertia ixx="0.0044914016774426635" iyy="0.001503231551922557" izz="0.004502565506014508" ixy="9.402973964307143e-06" iyz="0.00014839581391148937" ixz="-5.15886259766507e-07" />
+        </inertial>
+        <visual name="forearm_assembly_left_visual">
+            <origin xyz="0.05550000021630542 -0.012000002697463253 -1.5489831639570185e-14" rpy="-1.5707963267948923 -3.5207696541879228e-15 3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/forearm_assembly_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="forearm_assembly_left_collision">
+            <origin xyz="0.05550000021630542 -0.012000002697463253 -1.5489831639570185e-14" rpy="-1.5707963267948923 -3.5207696541879228e-15 3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/forearm_assembly_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="wrist_rotation_left">
+        <inertial>
+            <origin xyz="-0.00020666389733527525 0.024928352483722806 2.4438411500682377e-07" rpy="0.0 -0.0 -7.345942552230716e-107" />
+            <mass value="0.06890976217337731" />
+            <inertia ixx="1.4032818734979746e-05" iyy="1.4385379157669242e-05" izz="2.3927444080574373e-05" ixy="8.73199394830701e-08" iyz="-5.866290092582105e-11" ixz="-2.948908825461949e-11" />
+        </inertial>
+        <visual name="wrist_rotation_left_visual">
+            <origin xyz="2.163055157211602e-10 0.013449997302536012 0.009999999999983942" rpy="-1.5707963267948923 -3.3983049742731904e-15 -3.1415926535897927" />
+            <geometry>
+                <mesh filename="meshes/wrist_rotation_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="wrist_rotation_left_collision">
+            <origin xyz="2.163055157211602e-10 0.013449997302536012 0.009999999999983942" rpy="-1.5707963267948923 -3.3983049742731904e-15 -3.1415926535897927" />
+            <geometry>
+                <mesh filename="meshes/wrist_rotation_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="shoulder_assembly_right">
+        <inertial>
+            <origin xyz="-0.0009619451417276537 0.003794890149546908 0.0226368011847833" rpy="0.0 -0.0 0.0" />
+            <mass value="0.4483182123010635" />
+            <inertia ixx="0.0005711390096342084" iyy="0.0005338316644546426" izz="0.0003775353980590701" ixy="1.754063656569417e-05" iyz="1.6135792020220208e-05" ixz="-5.795855548745843e-06" />
+        </inertial>
+        <visual name="shoulder_assembly_right_visual">
+            <origin xyz="-0.015050000000009903 -0.015049997302535421 -2.1628967061815276e-10" rpy="0.0 -0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/shoulder_assembly_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="shoulder_assembly_right_collision">
+            <origin xyz="-0.015050000000009903 -0.015049997302535421 -2.1628967061815276e-10" rpy="0.0 -0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/shoulder_assembly_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="shoulder_brackets_right">
+        <inertial>
+            <origin xyz="-5.1940332781406084e-05 0.03299995912391836 -0.031249997302521513" rpy="0.0 -0.0 0.0" />
+            <mass value="0.037288440724455946" />
+            <inertia ixx="2.2269377304567906e-05" iyy="2.8150332291110216e-05" izz="2.226936273538871e-05" ixy="-9.256398980639347e-09" iyz="5.353248226647178e-19" ixz="1.0164395367051604e-20" />
+        </inertial>
+        <visual name="shoulder_brackets_right_visual">
+            <origin xyz="0.031146080409695465 0.0660491043738503 -0.031249997302535835" rpy="1.5707963267948948 -7.792693254591177e-15 -1.569222370112142" />
+            <geometry>
+                <mesh filename="meshes/shoulder_brackets_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="shoulder_brackets_right_collision">
+            <origin xyz="0.031146080409695465 0.0660491043738503 -0.031249997302535835" rpy="1.5707963267948948 -7.792693254591177e-15 -1.569222370112142" />
+            <geometry>
+                <mesh filename="meshes/shoulder_brackets_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="upper_limb_assembly_right">
+        <inertial>
+            <origin xyz="0.03134092494493863 0.004674662926553499 -0.11517252348281147" rpy="-5.473822126268818e-48 -0.0 0.0" />
+            <mass value="1.195689782371219" />
+            <inertia ixx="0.006437795776505604" iyy="0.006353378754626382" izz="0.0015671924010897116" ixy="9.522446944821301e-06" iyz="0.00021140748557027" ixz="6.92687986540459e-05" />
+        </inertial>
+        <visual name="upper_limb_assembly_right_visual">
+            <origin xyz="0.0163371093190878 -0.016376862282679715 -0.0717356423677866" rpy="-0.018465364672838748 0.0015739566827572533 -6.331393556239866e-15" />
+            <geometry>
+                <mesh filename="meshes/upper_limb_assembly_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="upper_limb_assembly_right_collision">
+            <origin xyz="0.0163371093190878 -0.016376862282679715 -0.0717356423677866" rpy="-0.018465364672838748 0.0015739566827572533 -6.331393556239866e-15" />
+            <geometry>
+                <mesh filename="meshes/upper_limb_assembly_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="elbow_rot_brack_right">
+        <inertial>
+            <origin xyz="-1.6031929202675598e-05 0.00018811294664300483 0.010186119884736087" rpy="0.0 -0.0 0.0" />
+            <mass value="0.018644220362227924" />
+            <inertia ixx="3.6539833300069935e-06" iyy="1.4744909402942399e-05" izz="1.4075372507645501e-05" ixy="6.051156701943412e-08" iyz="-1.2273097401720673e-08" ixz="-1.752001189958552e-08" />
+        </inertial>
+        <visual name="elbow_rot_brack_right_visual">
+            <origin xyz="-0.03130142251259915 0.000779755542454993 0.03294199561345892" rpy="-1.4803038754684232 1.5522640104105974 -1.48577319865496" />
+            <geometry>
+                <mesh filename="meshes/elbow_rot_brack_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="elbow_rot_brack_right_collision">
+            <origin xyz="-0.03130142251259915 0.000779755542454993 0.03294199561345892" rpy="-1.4803038754684232 1.5522640104105974 -1.48577319865496" />
+            <geometry>
+                <mesh filename="meshes/elbow_rot_brack_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="forearm_assembly_right">
+        <inertial>
+            <origin xyz="0.03217560680528937 0.0995571254143716 -0.006036281809926436" rpy="0.0 -0.0 4.408103815583578e-39" />
+            <mass value="0.9482519860603768" />
+            <inertia ixx="0.00427123125120632" iyy="0.0013829482282972094" izz="0.0042637573016297975" ixy="-6.828243488986317e-06" iyz="0.00021131545629145265" ixz="3.206974341640752e-07" />
+        </inertial>
+        <visual name="forearm_assembly_right_visual">
+            <origin xyz="0.05543328842743428 -0.012300467984127357 0.000314403928893654" rpy="-1.5523398208819634 0.001674651754925195 3.136138784955589" />
+            <geometry>
+                <mesh filename="meshes/forearm_assembly_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="forearm_assembly_right_collision">
+            <origin xyz="0.05543328842743428 -0.012300467984127357 0.000314403928893654" rpy="-1.5523398208819634 0.001674651754925195 3.136138784955589" />
+            <geometry>
+                <mesh filename="meshes/forearm_assembly_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="wrist_rotation_right">
+        <inertial>
+            <origin xyz="-6.99563811160786e-05 -0.024924864247891244 0.0004601657894583866" rpy="0.0 -0.0 0.0" />
+            <mass value="0.06890976217337731" />
+            <inertia ixx="1.4033811612954028e-05" iyy="1.4387667415821648e-05" izz="2.3924162944487584e-05" ixy="-8.894477385688881e-08" iyz="1.7625719129013453e-07" ixz="1.724456363816352e-08" />
+        </inertial>
+        <visual name="wrist_rotation_right_visual">
+            <origin xyz="5.80226578103904e-05 -0.013632148164157627 -0.009750056779919022" rpy="1.5892528327078295 -0.0016746517549250418 -3.1361387849555906" />
+            <geometry>
+                <mesh filename="meshes/wrist_rotation_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="wrist_rotation_right_collision">
+            <origin xyz="5.80226578103904e-05 -0.013632148164157627 -0.009750056779919022" rpy="1.5892528327078295 -0.0016746517549250418 -3.1361387849555906" />
+            <geometry>
+                <mesh filename="meshes/wrist_rotation_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_hand_assembly">
+        <inertial>
+            <origin xyz="0.0049809873516881 -0.06984922864681181 0.025574921472904712" rpy="0.0 -0.0 0.0" />
+            <mass value="0.25400276992107756" />
+            <inertia ixx="0.00043100240271247425" iyy="0.0002212741733682022" izz="0.0002880953651795415" ixy="1.8811983985983502e-06" iyz="-3.621238543514288e-05" ixz="6.988773019897532e-06" />
+        </inertial>
+        <visual name="right_hand_assembly_visual">
+            <origin xyz="-0.007510190220047548 -0.12117396676189422 0.0023517587779246086" rpy="-0.27945958510939467 -1.5650911437326767 -1.272875669094854" />
+            <geometry>
+                <mesh filename="meshes/right_hand_assembly.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_hand_assembly_collision">
+            <origin xyz="-0.007510190220047548 -0.12117396676189422 0.0023517587779246086" rpy="-0.27945958510939467 -1.5650911437326767 -1.272875669094854" />
+            <geometry>
+                <mesh filename="meshes/right_hand_assembly.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_index_proximal">
+        <inertial>
+            <origin xyz="-0.003479243871794182 0.017612621803882646 0.0011774609400109172" rpy="0.0 -2.7755575615628914e-17 0.0" />
+            <mass value="0.012001123215735108" />
+            <inertia ixx="1.9012803354334569e-06" iyy="9.108026728273098e-07" izz="1.8948032784249226e-06" ixy="-2.677505776545241e-08" iyz="1.9675921440147255e-07" ixz="9.581892345929941e-09" />
+        </inertial>
+        <visual name="right_index_proximal_visual">
+            <origin xyz="0.00604300476714215 -0.004933084603050375 -0.006620930448933038" rpy="0.7820629881375822 -1.324145644137046 0.8228398839281378" />
+            <geometry>
+                <mesh filename="meshes/right_index_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_index_proximal_collision">
+            <origin xyz="0.00604300476714215 -0.004933084603050375 -0.006620930448933038" rpy="0.7820629881375822 -1.324145644137046 0.8228398839281378" />
+            <geometry>
+                <mesh filename="meshes/right_index_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_middle_proximal">
+        <inertial>
+            <origin xyz="-0.0035228288842297675 0.017362549962594686 0.003134914644999469" rpy="0.0 -0.0 0.0" />
+            <mass value="0.012001123215735108" />
+            <inertia ixx="1.8980211049007026e-06" iyy="8.777539720200565e-07" izz="1.931111209773604e-06" ixy="-5.919120869711283e-08" iyz="4.7978959563712946e-08" ixz="2.818004574226975e-09" />
+        </inertial>
+        <visual name="right_middle_proximal_visual">
+            <origin xyz="0.006868960569468641 -0.00412097309374218 -0.006365924992756256" rpy="0.6980944713230178 -1.518932856036506 0.8918399302397089" />
+            <geometry>
+                <mesh filename="meshes/right_middle_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_middle_proximal_collision">
+            <origin xyz="0.006868960569468641 -0.00412097309374218 -0.006365924992756256" rpy="0.6980944713230178 -1.518932856036506 0.8918399302397089" />
+            <geometry>
+                <mesh filename="meshes/right_middle_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_ring_proximal">
+        <inertial>
+            <origin xyz="0.003952404381943496 -0.016951915651416058 0.004550500756101848" rpy="0.0 -1.387778780781446e-17 0.0" />
+            <mass value="0.012001123215735108" />
+            <inertia ixx="1.8986766799798487e-06" iyy="8.79690541012029e-07" izz="1.9285190656994504e-06" ixy="-5.5876277124982394e-08" iyz="6.85683045973723e-08" ixz="6.774402502093663e-09" />
+        </inertial>
+        <visual name="right_ring_proximal_visual">
+            <origin xyz="-0.007513810138933792 0.0034566831400950804 -0.006023619761125758" rpy="-2.2930771718806784 -1.475604827183607 0.743044717555112" />
+            <geometry>
+                <mesh filename="meshes/right_ring_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_ring_proximal_collision">
+            <origin xyz="-0.007513810138933792 0.0034566831400950804 -0.006023619761125758" rpy="-2.2930771718806784 -1.475604827183607 0.743044717555112" />
+            <geometry>
+                <mesh filename="meshes/right_ring_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_pinky_proximal">
+        <inertial>
+            <origin xyz="0.004641572890591306 -0.01367895075356337 0.005390635531310188" rpy="0.0 -0.0 0.0" />
+            <mass value="0.00900102394096515" />
+            <inertia ixx="1.1679942109824526e-06" iyy="6.509502430192963e-07" izz="1.1622612375588143e-06" ixy="-3.106433447935358e-08" iyz="9.43207278865617e-08" ixz="8.188702386410633e-09" />
+        </inertial>
+        <visual name="right_pinky_proximal_visual">
+            <origin xyz="-0.008148894077485239 0.0027530918111791183 -0.0055412976094836" rpy="-2.3186411236681006 -1.3295393966507967 0.7812674355150083" />
+            <geometry>
+                <mesh filename="meshes/right_pinky_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_pinky_proximal_collision">
+            <origin xyz="-0.008148894077485239 0.0027530918111791183 -0.0055412976094836" rpy="-2.3186411236681006 -1.3295393966507967 0.7812674355150083" />
+            <geometry>
+                <mesh filename="meshes/right_pinky_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_ring_inter">
+        <inertial>
+            <origin xyz="0.003408410355907705 -0.010035015121386763 0.004382886915876725" rpy="9.542075392799922e-36 -0.0 0.0" />
+            <mass value="0.006999225498832277" />
+            <inertia ixx="6.872238605937742e-07" iyy="4.82735661420236e-07" izz="6.785568108409745e-07" ixy="-3.755922962922487e-08" iyz="1.0516992343732705e-08" ixz="3.130054947869656e-09" />
+        </inertial>
+        <visual name="right_ring_inter_visual">
+            <origin xyz="-0.007075322020259023 0.0034566799193702737 -0.006533082286071803" rpy="-3.1171176368793603 -1.5064477905579372 1.5648373322464306" />
+            <geometry>
+                <mesh filename="meshes/right_ring_inter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_ring_inter_collision">
+            <origin xyz="-0.007075322020259023 0.0034566799193702737 -0.006533082286071803" rpy="-3.1171176368793603 -1.5064477905579372 1.5648373322464306" />
+            <geometry>
+                <mesh filename="meshes/right_ring_inter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_index_inter">
+        <inertial>
+            <origin xyz="0.0034184215643175263 -0.01079660055186217 0.0018100412916804843" rpy="0.0 3.851859888774472e-34 0.0" />
+            <mass value="0.006999225498832277" />
+            <inertia ixx="6.871814810069552e-07" iyy="4.89243356934649e-07" izz="6.720914949177178e-07" ixy="-3.7333001556925246e-08" iyz="-3.650549212734761e-08" ixz="-6.109972102482514e-09" />
+        </inertial>
+        <visual name="right_index_inter_visual">
+            <origin xyz="-0.007100919549993705 0.004933080266495225 -0.0054709934630175995" rpy="-0.008789073334703267 -1.3907727446900822 -1.5436838948597056" />
+            <geometry>
+                <mesh filename="meshes/right_index_inter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_index_inter_collision">
+            <origin xyz="-0.007100919549993705 0.004933080266495225 -0.0054709934630175995" rpy="-0.008789073334703267 -1.3907727446900822 -1.5436838948597056" />
+            <geometry>
+                <mesh filename="meshes/right_index_inter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_pinky_inter">
+        <inertial>
+            <origin xyz="0.003400548097894074 -0.009521097322081928 0.005414192842235686" rpy="3.6205226005326477e-35 -0.0 0.0" />
+            <mass value="0.006999225498832277" />
+            <inertia ixx="6.872164532703217e-07" iyy="4.87041076056155e-07" izz="6.742588035211358e-07" ixy="-3.70320594020486e-08" iyz="3.057128709297447e-08" ixz="7.055052706102246e-09" />
+        </inertial>
+        <visual name="right_pinky_inter_visual">
+            <origin xyz="-0.007062857014592368 0.0027530974221757986 -0.006872147542834029" rpy="-3.1322393695769795 -1.401739999862845 1.5800417633068837" />
+            <geometry>
+                <mesh filename="meshes/right_pinky_inter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_pinky_inter_collision">
+            <origin xyz="-0.007062857014592368 0.0027530974221757986 -0.006872147542834029" rpy="-3.1322393695769795 -1.401739999862845 1.5800417633068837" />
+            <geometry>
+                <mesh filename="meshes/right_pinky_inter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_middle_inter">
+        <inertial>
+            <origin xyz="0.0034141627256474294 -0.010438336792022013 0.0033035007394359183" rpy="0.0 -0.0 0.0" />
+            <mass value="0.006999225498832277" />
+            <inertia ixx="6.87215899754104e-07" iyy="4.826930524864936e-07" izz="6.786073806063636e-07" ixy="-3.7713074140573865e-08" iyz="-9.99293199186943e-09" ixz="-8.29759405933035e-10" />
+        </inertial>
+        <visual name="right_middle_inter_visual">
+            <origin xyz="-0.007086940406303768 0.004120974098511496 -0.0061223235020127125" rpy="-0.038952818203096755 -1.5303752601089633 -1.5134099063604944" />
+            <geometry>
+                <mesh filename="meshes/right_middle_inter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_middle_inter_collision">
+            <origin xyz="-0.007086940406303768 0.004120974098511496 -0.0061223235020127125" rpy="-0.038952818203096755 -1.5303752601089633 -1.5134099063604944" />
+            <geometry>
+                <mesh filename="meshes/right_middle_inter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_index_distal">
+        <inertial>
+            <origin xyz="0.0029045113118790766 -0.010795431505858204 0.001801093686327171" rpy="0.0 -0.0 0.0" />
+            <mass value="0.005999023354562174" />
+            <inertia ixx="5.759346639077397e-07" iyy="3.82287059833529e-07" izz="5.281970994128195e-07" ixy="-1.5681179757042616e-08" iyz="-2.8581116600701936e-08" ixz="-2.7391814873180715e-09" />
+        </inertial>
+        <visual name="right_index_distal_visual">
+            <origin xyz="-0.007029376814969908 0.0009983693511084368 -0.006187177337435621" rpy="-0.008789073334703065 -1.3907727446900822 -1.5436838948597058" />
+            <geometry>
+                <mesh filename="meshes/right_index_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_index_distal_collision">
+            <origin xyz="-0.007029376814969908 0.0009983693511084368 -0.006187177337435621" rpy="-0.008789073334703065 -1.3907727446900822 -1.5436838948597058" />
+            <geometry>
+                <mesh filename="meshes/right_index_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_middle_distal">
+        <inertial>
+            <origin xyz="0.0029002703237480886 -0.010438631555313478 0.003293168018547874" rpy="9.62964972193618e-35 3.851859888774472e-34 0.0" />
+            <mass value="0.005999023354562174" />
+            <inertia ixx="5.7594973475422e-07" iyy="3.772228956153491e-07" izz="5.33246192783651e-07" ixy="-1.5811682352317995e-08" iyz="-7.40923664229679e-09" ixz="-4.1849900021123344e-10" />
+        </inertial>
+        <visual name="right_middle_distal_visual">
+            <origin xyz="-0.007013398650989729 0.00012491227238548675 -0.00628383856906737" rpy="-0.038952818203088206 -1.5303752601089633 -1.5134099063604944" />
+            <geometry>
+                <mesh filename="meshes/right_middle_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_middle_distal_collision">
+            <origin xyz="-0.007013398650989729 0.00012491227238548675 -0.00628383856906737" rpy="-0.038952818203088206 -1.5303752601089633 -1.5134099063604944" />
+            <geometry>
+                <mesh filename="meshes/right_middle_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_ring_distal">
+        <inertial>
+            <origin xyz="0.0028945438733934737 -0.010036522752173269 0.00437164929621499" rpy="0.0 -0.0 0.0" />
+            <mass value="0.005999023354562174" />
+            <inertia ixx="5.759531980446386e-07" iyy="3.7737848052055146e-07" izz="5.330871445958368e-07" ixy="-1.5733291546752428e-08" iyz="8.939486538387177e-09" ixz="1.31626838833879e-09" />
+        </inertial>
+        <visual name="right_ring_distal_visual">
+            <origin xyz="-0.00700120917451244 -0.0005343570890094185 -0.0062759450444927365" rpy="-3.117117636879361 -1.506447790557937 1.5648373322464306" />
+            <geometry>
+                <mesh filename="meshes/right_ring_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_ring_distal_collision">
+            <origin xyz="-0.00700120917451244 -0.0005343570890094185 -0.0062759450444927365" rpy="-3.117117636879361 -1.506447790557937 1.5648373322464306" />
+            <geometry>
+                <mesh filename="meshes/right_ring_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_pinky_distal">
+        <inertial>
+            <origin xyz="0.0028866978165011403 -0.009523911229837197 0.005402188971472164" rpy="0.0 -0.0 0.0" />
+            <mass value="0.005999023354562174" />
+            <inertia ixx="5.759499285518891e-07" iyy="3.809292747928779e-07" izz="5.295396198184284e-07" ixy="-1.5505636321785917e-08" iyz="2.4899294716763252e-08" ixz="3.035926727894239e-09" />
+        </inertial>
+        <visual name="right_pinky_distal_visual">
+            <origin xyz="-0.006988996574172859 -0.0011891941196307699 -0.00619916857471452" rpy="-3.1322393695769795 -1.401739999862845 1.5800417633068835" />
+            <geometry>
+                <mesh filename="meshes/right_pinky_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_pinky_distal_collision">
+            <origin xyz="-0.006988996574172859 -0.0011891941196307699 -0.00619916857471452" rpy="-3.1322393695769795 -1.401739999862845 1.5800417633068835" />
+            <geometry>
+                <mesh filename="meshes/right_pinky_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_hand_assembly">
+        <inertial>
+            <origin xyz="0.003650161613935552 -0.06978794853916646 0.026036207466139383" rpy="0.0 -0.0 0.0" />
+            <mass value="0.254002790384962" />
+            <inertia ixx="0.00043098018054157916" iyy="0.00022087970399142787" izz="0.000288512196587265" ixy="-1.8988087340937598e-06" iyz="3.59696277101515e-05" ixz="-6.554307758518951e-06" />
+        </inertial>
+        <visual name="left_hand_assembly_visual">
+            <origin xyz="-0.009750000063332749 -0.12099999882245442 -0.07499982049863366" rpy="-1.5707963267948923 -1.570796326794893 0" />
+            <geometry>
+                <mesh filename="meshes/left_hand_assembly.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_hand_assembly_collision">
+            <origin xyz="-0.009750000063332749 -0.12099999882245442 -0.07499982049863366" rpy="-1.5707963267948923 -1.570796326794893 0" />
+            <geometry>
+                <mesh filename="meshes/left_hand_assembly.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_index_proximal">
+        <inertial>
+            <origin xyz="0.004410878524915773 -0.01638259866455087 0.005987533212718788" rpy="0.0 -2.7755575615628914e-17 0.0" />
+            <mass value="0.012001123215735108" />
+            <inertia ixx="1.9004471928041048e-06" iyy="9.089911636710882e-07" izz="1.897447930222639e-06" ixy="-4.6307351182902314e-08" iyz="1.8808378078107158e-07" ixz="1.4846236120877486e-08" />
+        </inertial>
+        <visual name="left_index_proximal_visual">
+            <origin xyz="-0.008091632923155742 0.002845251799472521 -0.005578536941335131" rpy="-2.3485403734236274 -1.3245994100159413 0.7930522801659804" />
+            <geometry>
+                <mesh filename="meshes/left_index_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_index_proximal_collision">
+            <origin xyz="-0.008091632923155742 0.002845251799472521 -0.005578536941335131" rpy="-2.3485403734236274 -1.3245994100159413 0.7930522801659804" />
+            <geometry>
+                <mesh filename="meshes/left_index_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_middle_proximal">
+        <inertial>
+            <origin xyz="0.0034528142360284167 -0.01715040656052871 0.004199709191084722" rpy="0.0 -0.0 0.0" />
+            <mass value="0.012001123215735108" />
+            <inertia ixx="1.8955633402684812e-06" iyy="8.793979816897749e-07" izz="1.931924964730903e-06" ixy="-7.830212662653492e-08" iyz="3.61359705108914e-08" ixz="4.710468153144772e-09" />
+        </inertial>
+        <visual name="left_middle_proximal_visual">
+            <origin xyz="-0.007220340757428403 0.0037777010253785192 -0.006187546468753524" rpy="-2.3558898109096593 -1.5214359744010773 0.7857028426792075" />
+            <geometry>
+                <mesh filename="meshes/left_middle_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_middle_proximal_collision">
+            <origin xyz="-0.007220340757428403 0.0037777010253785192 -0.006187546468753524" rpy="-2.3558898109096593 -1.5214359744010773 0.7857028426792075" />
+            <geometry>
+                <mesh filename="meshes/left_middle_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_ring_proximal">
+        <inertial>
+            <origin xyz="-0.00312161260903423 0.017507781791263995 0.0027256913947289975" rpy="0.0 -1.3877787807814457e-17 0.0" />
+            <mass value="0.012001123215735108" />
+            <inertia ixx="1.8961184426140008e-06" iyy="8.839608552427267e-07" izz="1.9268069888302637e-06" ixy="-7.388817865449483e-08" iyz="8.214838273052002e-08" ixz="7.10431723837595e-09" />
+        </inertial>
+        <visual name="left_ring_proximal_visual">
+            <origin xyz="0.0065640171616433915 -0.004429717456007367 -0.006479291359510171" rpy="0.7866176229346344 -1.4721057291867112 0.7866176229350992" />
+            <geometry>
+                <mesh filename="meshes/left_ring_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_ring_proximal_collision">
+            <origin xyz="0.0065640171616433915 -0.004429717456007367 -0.006479291359510171" rpy="0.7866176229346344 -1.4721057291867112 0.7866176229350992" />
+            <geometry>
+                <mesh filename="meshes/left_ring_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_pinky_proximal">
+        <inertial>
+            <origin xyz="-0.0031242503457893636 0.015002080224040882 0.0017009910320550502" rpy="0.0 -0.0 0.0" />
+            <mass value="0.00900102394096515" />
+            <inertia ixx="1.1662647876646964e-06" iyy="6.556718857315261e-07" izz="1.159269018163473e-06" ixy="-3.935160770354373e-08" iyz="1.0349519239309811e-07" ixz="8.69867967007468e-09" />
+        </inertial>
+        <visual name="left_pinky_proximal_visual">
+            <origin xyz="0.0059369062623727585 -0.005033215985623656 -0.0066415251962251886" rpy="0.7930522801659777 -1.3245994100159897 0.7930522801661629" />
+            <geometry>
+                <mesh filename="meshes/left_pinky_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_pinky_proximal_collision">
+            <origin xyz="0.0059369062623727585 -0.005033215985623656 -0.0066415251962251886" rpy="0.7930522801659777 -1.3245994100159897 0.7930522801661629" />
+            <geometry>
+                <mesh filename="meshes/left_pinky_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_index_inter">
+        <inertial>
+            <origin xyz="0.0032156388242748335 -0.009552399285007453 0.005471719301488527" rpy="0.0 -0.0 0.0" />
+            <mass value="0.006999225498832277" />
+            <inertia ixx="6.857568890790249e-07" iyy="4.88815323029454e-07" izz="6.739441207499752e-07" ixy="-4.0707640855831145e-08" iyz="3.138880466267355e-08" ixz="7.859774739903125e-09" />
+        </inertial>
+        <visual name="left_index_inter_visual">
+            <origin xyz="-0.007000000063341929 0.002845250978759779 -0.006898885100919898" rpy="-3.141592653589604 -1.396263401595463 1.570796326794714" />
+            <geometry>
+                <mesh filename="meshes/left_index_inter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_index_inter_collision">
+            <origin xyz="-0.007000000063341929 0.002845250978759779 -0.006898885100919898" rpy="-3.141592653589604 -1.396263401595463 1.570796326794714" />
+            <geometry>
+                <mesh filename="meshes/left_index_inter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_middle_inter">
+        <inertial>
+            <origin xyz="0.0032156388242738387 -0.010220955045312934 0.004089039628314204" rpy="-1.0898884846646893e-58 -0.0 0.0" />
+            <mass value="0.006999225498832277" />
+            <inertia ixx="6.857568890790249e-07" iyy="4.837491837349217e-07" izz="6.790102600375686e-07" ixy="-4.1405346117885655e-08" iyz="4.658649459038031e-09" ixz="2.1178753418973162e-09" />
+        </inertial>
+        <visual name="left_middle_inter_visual">
+            <origin xyz="-0.007000000063342924 0.0037776975137548165 -0.006435755470597897" rpy="-3.1415926535888516 -1.5358897417550084 1.570796326793957" />
+            <geometry>
+                <mesh filename="meshes/left_middle_inter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_middle_inter_collision">
+            <origin xyz="-0.007000000063342924 0.0037776975137548165 -0.006435755470597897" rpy="-3.1415926535888516 -1.5358897417550084 1.570796326793957" />
+            <geometry>
+                <mesh filename="meshes/left_middle_inter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_ring_inter">
+        <inertial>
+            <origin xyz="0.0032156388242718494 -0.010592383304481175 0.0029982498527978407" rpy="0.0 -0.0 0.0" />
+            <mass value="0.006999225498832277" />
+            <inertia ixx="6.85756889080109e-07" iyy="4.849140575486494e-07" izz="6.778453862221062e-07" ixy="-4.139990155208051e-08" iyz="-1.574168347171119e-08" ixz="-2.221763801581178e-09" />
+        </inertial>
+        <visual name="left_ring_inter_visual">
+            <origin xyz="-0.007000000063344914 0.004429723829060919 -0.006005631677517762" rpy="-4.714989210494415e-13 -1.5009831567151237 -1.5707963267944216" />
+            <geometry>
+                <mesh filename="meshes/left_ring_inter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_ring_inter_collision">
+            <origin xyz="-0.007000000063344914 0.004429723829060919 -0.006005631677517762" rpy="-4.714989210494415e-13 -1.5009831567151237 -1.5707963267944216" />
+            <geometry>
+                <mesh filename="meshes/left_ring_inter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_pinky_inter">
+        <inertial>
+            <origin xyz="0.003215638824271991 -0.010847757797396796 0.001874626290659407" rpy="4.780177954570056e-59 -0.0 0.0" />
+            <mass value="0.006999225498832277" />
+            <inertia ixx="6.857568890794585e-07" iyy="4.902949437921716e-07" izz="6.724644999837881e-07" ixy="-4.094087100543417e-08" iyz="-3.5454029297132296e-08" ixz="-6.53706083535153e-09" />
+        </inertial>
+        <visual name="left_pinky_inter_visual">
+            <origin xyz="-0.007000000063344771 0.005033218561286788 -0.005509693260830275" rpy="-1.8923461009032541e-13 -1.3962634015954658 -1.5707963267947058" />
+            <geometry>
+                <mesh filename="meshes/left_pinky_inter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_pinky_inter_collision">
+            <origin xyz="-0.007000000063344771 0.005033218561286788 -0.005509693260830275" rpy="-1.8923461009032541e-13 -1.3962634015954658 -1.5707963267947058" />
+            <geometry>
+                <mesh filename="meshes/left_pinky_inter.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_index_distal">
+        <inertial>
+            <origin xyz="0.002701846833916761 -0.009545792835375906 0.005458873197957352" rpy="0.0 -0.0 0.0" />
+            <mass value="0.005999023354562174" />
+            <inertia ixx="5.752998208893075e-07" iyy="3.818448101209834e-07" izz="5.292741921455318e-07" ixy="-1.911459273544816e-08" iyz="2.5618918269459424e-08" ixz="3.672046820692859e-09" />
+        </inertial>
+        <visual name="left_index_distal_visual">
+            <origin xyz="-0.006999999959032977 -0.0010939801382432535 -0.006204290046134667" rpy="-3.1415926535896035 -1.396263401595463 1.5707963267947138" />
+            <geometry>
+                <mesh filename="meshes/left_index_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_index_distal_collision">
+            <origin xyz="-0.006999999959032977 -0.0010939801382432535 -0.006204290046134667" rpy="-3.1415926535896035 -1.396263401595463 1.5707963267947138" />
+            <geometry>
+                <mesh filename="meshes/left_index_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_middle_distal">
+        <inertial>
+            <origin xyz="0.00270184683391534 -0.010212627461825932 0.004077230191532948" rpy="0.0 -0.0 0.0" />
+            <mass value="0.005999023354562174" />
+            <inertia ixx="5.75299820889958e-07" iyy="3.776388613459594e-07" izz="5.334801409240253e-07" ixy="-1.943962097414667e-08" iyz="4.30796230795321e-09" ixz="9.760735687584785e-10" />
+        </inertial>
+        <visual name="left_middle_distal_visual">
+            <origin xyz="-0.0069999999590342555 -0.000219868629187161 -0.00629616296781812" rpy="-3.141592653588851 -1.5358897417550084 1.570796326793957" />
+            <geometry>
+                <mesh filename="meshes/left_middle_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_middle_distal_collision">
+            <origin xyz="-0.0069999999590342555 -0.000219868629187161 -0.00629616296781812" rpy="-3.141592653588851 -1.5358897417550084 1.570796326793957" />
+            <geometry>
+                <mesh filename="meshes/left_middle_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_ring_distal">
+        <inertial>
+            <origin xyz="0.0027018468339130666 -0.010582865719914167 0.0029873892457520056" rpy="0.0 -0.0 0.0" />
+            <mass value="0.005999023354562174" />
+            <inertia ixx="5.752998208893075e-07" iyy="3.784459385487715e-07" izz="5.326730637168764e-07" ixy="-1.9435156168885054e-08" iyz="-1.1986788972322658e-08" ixz="-1.0612671715818506e-09" />
+        </inertial>
+        <visual name="left_ring_distal_visual">
+            <origin xyz="-0.006999999959036671 0.0004394665800980846 -0.006284649655906094" rpy="-4.713196714548699e-13 -1.5009831567151237 -1.5707963267944218" />
+            <geometry>
+                <mesh filename="meshes/left_ring_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_ring_distal_collision">
+            <origin xyz="-0.006999999959036671 0.0004394665800980846 -0.006284649655906094" rpy="-4.713196714548699e-13 -1.5009831567151237 -1.5707963267944218" />
+            <geometry>
+                <mesh filename="meshes/left_ring_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_pinky_distal">
+        <inertial>
+            <origin xyz="0.002701846833912214 -0.01083715458904912 0.0018648128843354783" rpy="0.0 -0.0 0.0" />
+            <mass value="0.005999023354562174" />
+            <inertia ixx="5.752998208893077e-07" iyy="3.826232484686193e-07" izz="5.284957537952941e-07" ixy="-1.9217755722715505e-08" iyz="-2.7757660055996627e-08" ixz="-3.0869804468723633e-09" />
+        </inertial>
+        <visual name="left_pinky_distal_visual">
+            <origin xyz="-0.006999999959037382 0.0010939881990861978 -0.006204285361124206" rpy="-1.8924369788473928e-13 -1.3962634015954656 -1.5707963267947058" />
+            <geometry>
+                <mesh filename="meshes/left_pinky_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_pinky_distal_collision">
+            <origin xyz="-0.006999999959037382 0.0010939881990861978 -0.006204285361124206" rpy="-1.8924369788473928e-13 -1.3962634015954656 -1.5707963267947058" />
+            <geometry>
+                <mesh filename="meshes/left_pinky_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_thumb_rotation">
+        <inertial>
+            <origin xyz="-0.008158288836458319 0.013080696410911656 -4.094415119169526e-05" rpy="8.758115402030107e-47 -0.0 0.0" />
+            <mass value="0.009996019011716829" />
+            <inertia ixx="9.255521534034387e-07" iyy="1.9785039751876723e-06" izz="1.7232556539297991e-06" ixy="8.809849355259113e-08" iyz="-1.219775413890435e-07" ixz="2.317626783196469e-07" />
+        </inertial>
+        <visual name="left_thumb_rotation_visual">
+            <origin xyz="0.007899698999494654 0.08795157067277255 0.006730482241773075" rpy="-1.5709963789562171 -0.17453281171458987 -3.140440598860912" />
+            <geometry>
+                <mesh filename="meshes/left_thumb_rotation.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_thumb_rotation_collision">
+            <origin xyz="0.007899698999494654 0.08795157067277255 0.006730482241773075" rpy="-1.5709963789562171 -0.17453281171458987 -3.140440598860912" />
+            <geometry>
+                <mesh filename="meshes/left_thumb_rotation.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_thumb_proximal">
+        <inertial>
+            <origin xyz="0.016645322648243165 -0.0012807786390094122 0.006449689561564327" rpy="-5.551115123125783e-17 8.673617379884035e-19 -1.734723475976807e-18" />
+            <mass value="0.012004589473194155" />
+            <inertia ixx="9.155275634330517e-07" iyy="1.8596577502348437e-06" izz="1.9152084157844775e-06" ixy="1.980283634180983e-07" iyz="-4.277056103423567e-09" ixz="-5.550144737275387e-08" />
+        </inertial>
+        <visual name="left_thumb_proximal_visual">
+            <origin xyz="-0.003512184491467174 -0.0023768814456042267 -0.009311552942672422" rpy="1.7502999729275879 -1.0308927315422498 -1.8607704646741046" />
+            <geometry>
+                <mesh filename="meshes/left_thumb_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_thumb_proximal_collision">
+            <origin xyz="-0.003512184491467174 -0.0023768814456042267 -0.009311552942672422" rpy="1.7502999729275879 -1.0308927315422498 -1.8607704646741046" />
+            <geometry>
+                <mesh filename="meshes/left_thumb_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_thumb_distal">
+        <inertial>
+            <origin xyz="0.002966483435430973 0.0003500386716741133 0.010909981285854223" rpy="0.0 -0.0 0.0" />
+            <mass value="0.005999023354562174" />
+            <inertia ixx="5.375547378001818e-07" iyy="5.645891395728365e-07" izz="3.8427494579180283e-07" ixy="1.4631926260237969e-08" iyz="2.251180771672575e-08" ixz="3.272536020296166e-08" />
+        </inertial>
+        <visual name="left_thumb_distal_visual">
+            <origin xyz="0.008300586678286379 -0.012911015972603758 0.001046912887244531" rpy="3.0549696725818136 0.12059243885127004 2.613804960339199" />
+            <geometry>
+                <mesh filename="meshes/left_thumb_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_thumb_distal_collision">
+            <origin xyz="0.008300586678286379 -0.012911015972603758 0.001046912887244531" rpy="3.0549696725818136 0.12059243885127004 2.613804960339199" />
+            <geometry>
+                <mesh filename="meshes/left_thumb_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_thumb_rotation">
+        <inertial>
+            <origin xyz="0.008239000803585946 -0.012989121826712129 0.00026645082435777567" rpy="0.0 -0.0 0.0" />
+            <mass value="0.009996019556507406" />
+            <inertia ixx="9.295837259202383e-07" iyy="1.971755824951154e-06" izz="1.7291969554619323e-06" ixy="9.232604363668127e-08" iyz="-1.3030589997992112e-07" ixz="2.3077221653197352e-07" />
+        </inertial>
+        <visual name="right_thumb_rotation_visual">
+            <origin xyz="-0.01174895291987422 -0.08811213335138572 -0.004323656328998453" rpy="1.589744951512009 -0.17615615437947038 -3.14054611787921" />
+            <geometry>
+                <mesh filename="meshes/right_thumb_rotation.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_thumb_rotation_collision">
+            <origin xyz="-0.01174895291987422 -0.08811213335138572 -0.004323656328998453" rpy="1.589744951512009 -0.17615615437947038 -3.14054611787921" />
+            <geometry>
+                <mesh filename="meshes/right_thumb_rotation.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_thumb_proximal">
+        <inertial>
+            <origin xyz="-0.017736931916392466 -0.002382186226007832 -0.00017900882128557783" rpy="0.0 -0.0 0.0" />
+            <mass value="0.012004589473194155" />
+            <inertia ixx="9.178759182720382e-07" iyy="1.8601080174919616e-06" izz="1.912409793679481e-06" ixy="2.0238928279140532e-07" iyz="-4.127567978986003e-09" ixz="-6.083848372770903e-08" />
+        </inertial>
+        <visual name="right_thumb_proximal_visual">
+            <origin xyz="0.005367156995823698 0.008610910906373021 -0.0013175129723136082" rpy="-1.3951456435570706 -1.0120431432780042 -1.857271777994565" />
+            <geometry>
+                <mesh filename="meshes/right_thumb_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_thumb_proximal_collision">
+            <origin xyz="0.005367156995823698 0.008610910906373021 -0.0013175129723136082" rpy="-1.3951456435570706 -1.0120431432780042 -1.857271777994565" />
+            <geometry>
+                <mesh filename="meshes/right_thumb_proximal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_thumb_distal">
+        <inertial>
+            <origin xyz="0.0029625304533429644 0.00042866229506564933 -0.010920670999570472" rpy="0.0 -0.0 0.0" />
+            <mass value="0.005999023354562174" />
+            <inertia ixx="5.36747477817472e-07" iyy="5.648246379965497e-07" izz="3.848467073465714e-07" ixy="1.4629874145249617e-08" iyz="-2.1427564720179548e-08" ixz="-3.4632443165214313e-08" />
+        </inertial>
+        <visual name="right_thumb_distal_visual">
+            <origin xyz="-0.008792814536207061 -0.0030818448018466427 0.0013706491093035567" rpy="-0.084612793334924 0.12471283153288164 -0.5088401808809996" />
+            <geometry>
+                <mesh filename="meshes/right_thumb_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_thumb_distal_collision">
+            <origin xyz="-0.008792814536207061 -0.0030818448018466427 0.0013706491093035567" rpy="-0.084612793334924 0.12471283153288164 -0.5088401808809996" />
+            <geometry>
+                <mesh filename="meshes/right_thumb_distal.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_target_frame">
+        <inertial>
+            <origin xyz="-0.27230694000000005 -1.03532597 -0.34364629" rpy="0.0 -0.0 0.0" />
+            <mass value="0.0" />
+            <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0" />
+        </inertial>
+        <visual name="right_target_frame_visual">
+            <origin xyz="-2.743086575662801e-09 -1.2727011409197076e-08 2.131084997358812e-09" rpy="-3.141592653589789 6.845288791680826e-16 -3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/right_target_frame.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_target_frame_collision">
+            <origin xyz="-2.743086575662801e-09 -1.2727011409197076e-08 2.131084997358812e-09" rpy="-3.141592653589789 6.845288791680826e-16 -3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/right_target_frame.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_target_frame">
+        <inertial>
+            <origin xyz="0.26539054000000006 -1.0417164900000002 -0.3483835800000001" rpy="0.0 -0.0 0.0" />
+            <mass value="0.0" />
+            <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0" />
+        </inertial>
+        <visual name="left_target_frame_visual">
+            <origin xyz="9.94155371358829e-10 -1.056475554150893e-08 -3.5541872023259203e-09" rpy="-3.1231270142599055 -0.005453860986554505 3.139917976928614" />
+            <geometry>
+                <mesh filename="meshes/left_target_frame.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_target_frame_collision">
+            <origin xyz="9.94155371358829e-10 -1.056475554150893e-08 -3.5541872023259203e-09" rpy="-3.1231270142599055 -0.005453860986554505 3.139917976928614" />
+            <geometry>
+                <mesh filename="meshes/left_target_frame.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="torso_stand_Rigid-1" type="fixed">
+        <origin xyz="0.00219388 -0.07931328 0.9259999999999999" rpy="3.141592653589793 -0.0 0.0" />
+        <parent link="torso_stand" />
+        <child link="chest_plate" />
+    </joint>
+    <joint name="torso_stand_Rigid-2" type="fixed">
+        <origin xyz="0.00219388 0.09068672 1.419" rpy="-1.5707963267948966 -0.0 -2.651278864776493e-16" />
+        <parent link="torso_stand" />
+        <child link="back_plate" />
+    </joint>
+    <joint name="torso_stand_Rigid-3" type="fixed">
+        <origin xyz="0.00219388 0.08068671999999999 1.4140000000000001" rpy="0.0 -0.0 0.0" />
+        <parent link="torso_stand" />
+        <child link="neck_cover" />
+    </joint>
+    <joint name="neck_cover_Rigid-4" type="fixed">
+        <origin xyz="-0.1675 0.013000000000000008 -0.024000000000000056" rpy="3.141592653589793 -0.0 -1.5707963267948908" />
+        <parent link="neck_cover" />
+        <child link="right_side_cover" />
+    </joint>
+    <joint name="neck_cover_Rigid-5" type="fixed">
+        <origin xyz="0.1675 -0.173 -0.024000000000000056" rpy="3.141592653589793 -0.0 -1.5707963267948934" />
+        <parent link="neck_cover" />
+        <child link="left_side_cover" />
+    </joint>
+    <joint name="torso_stand_Rigid-6" type="fixed">
+        <origin xyz="0.00219388 0.0006867199999999999 1.47" rpy="0.0 -0.0 0.0" />
+        <parent link="torso_stand" />
+        <child link="head_extrusion_bracket" />
+    </joint>
+    <joint name="head_extrusion_bracket_Rigid-21" type="fixed">
+        <origin xyz="0.0 -0.02 0.01" rpy="0.0 -0.0 0.0" />
+        <parent link="head_extrusion_bracket" />
+        <child link="head_rotation_servo" />
+    </joint>
+    <joint name="head_rotation" type="revolute">
+        <origin xyz="-2.7755575615628914e-19 2.220446049250313e-18 0.045699999999999935" rpy="0.0 -0.0 1.232595164407831e-32" />
+        <parent link="head_rotation_servo" />
+        <child link="head_rotation_bracket" />
+        <axis xyz="0.0 0.0 1.0" />
+        <limit lower="-1.396263" upper="1.396263" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="head_rotation_bracket_Rigid-23" type="fixed">
+        <origin xyz="0.02025 -0.007500000000000002 0.009399999999999978" rpy="-1.232595164407831e-32 -1.5707963267948966 0" />
+        <parent link="head_rotation_bracket" />
+        <child link="head_flexion_servo" />
+    </joint>
+    <joint name="head_flexion" type="revolute">
+        <origin xyz="0.028500000000000227 0.007500000000000002 -0.005200000000000001" rpy="3.721468706423303e-46 1.5707963267948966 0" />
+        <parent link="head_flexion_servo" />
+        <child link="head_flexion_bracket" />
+        <axis xyz="1.0 2.465190328815662e-32 -3.503246160812043e-46" />
+        <limit lower="-1.22173" upper="0.698132" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="head_flexion_bracket_Rigid-25" type="fixed">
+        <origin xyz="-0.025999999999999995 0.0 0.02689999999999998" rpy="-3.155443620884047e-30 3.5032461608120435e-46 2.465190328815662e-32" />
+        <parent link="head_flexion_bracket" />
+        <child link="head" />
+    </joint>
+    <joint name="torso_stand_Rigid-65" type="fixed">
+        <origin xyz="0.20469388 0.0006867199999999999 1.3900000000000001" rpy="-3.141592653589793 -1.5707963267948966 0" />
+        <parent link="torso_stand" />
+        <child link="shoulder_assembly_left" />
+    </joint>
+    <joint name="left_shoulder_abduction" type="revolute">
+        <origin xyz="0.0 0.0315 0.07200000000000004" rpy="-1.5707963267948966 -1.5707963267948966 0" />
+        <parent link="shoulder_assembly_left" />
+        <child link="shoulder_brackets_left" />
+        <axis xyz="-0.0 0.0 1.0" />
+        <!-- <limit lower="0.0" upper="1.5707" effort="1000000" velocity="1000000" /> -->
+          <limit lower="0.0" upper="0.52359" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_shoulder_flexion" type="revolute">
+        <origin xyz="0.031249999999999965 -0.06599999999999995 -0.03125" rpy="-1.5707963267948966 -0.0 -2.4651903288156624e-32" />
+        <parent link="shoulder_brackets_left" />
+        <child link="upper_limb_assembly_left" />
+        <axis xyz="-0.9999999999999999 -0.0 -4.930380657631324e-32" />
+        <!-- <limit lower="-0.523599" upper="1.570796" effort="1000000" velocity="1000000" /> -->
+        <limit lower="-0.523599" upper="1.0472" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_arm_rotation" type="revolute">
+        <origin xyz="-0.031500000000000056 0.0 -0.23950000000000005" rpy="-2.1778403356721507e-17 -1.0947644252537633e-47 5.254869241218064e-46" />
+        <parent link="upper_limb_assembly_left" />
+        <child link="elbow_rot_brack_left" />
+        <axis xyz="-4.930380657631324e-32 -2.1778403356721507e-17 1.0" />
+        <limit lower="-1.570796" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_elbow_flexion" type="revolute">
+        <origin xyz="-0.03125 6.938893903907229e-19 -0.032999999999999974" rpy="-3.141592653589793 -4.930380657631324e-32 -5.265606823084472e-46" />
+        <parent link="elbow_rot_brack_left" />
+        <child link="forearm_assembly_left" />
+        <axis xyz="-1.0 -7.888609052210118e-31 -3.944304526105059e-31" />
+        <limit lower="-1.570796" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_wrist_rotation" type="revolute">
+        <origin xyz="0.03150000000000002 0.2177 0.0" rpy="-7.968864759407802e-31 2.802596928649634e-45 3.944304526105059e-31" />
+        <parent link="forearm_assembly_left" />
+        <child link="wrist_rotation_left" />
+        <axis xyz="3.944304526105059e-31 1.0 -0.0" />
+        <limit lower="-3.14159" upper="1.5708" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="torso_stand_Rigid-72" type="fixed">
+        <origin xyz="-0.20030612000000003 0.0006867199999999999 1.3900000000000001" rpy="-0.0 -1.5707963267948966 0" />
+        <parent link="torso_stand" />
+        <child link="shoulder_assembly_right" />
+    </joint>
+    <joint name="right_shoulder_abduction" type="revolute">
+        <origin xyz="0.0 0.03150000000000001 0.072" rpy="-1.5707963267948966 1.5707963267948966 0" />
+        <parent link="shoulder_assembly_right" />
+        <child link="shoulder_brackets_right" />
+        <axis xyz="0.0 0.0 1.0" />
+        <!-- <limit lower="0.0" upper="1.5707" effort="1000000" velocity="1000000" /> -->
+         <limit lower="0.0" upper="0.52359" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_shoulder_flexion" type="revolute">
+        <origin xyz="-0.03135383999999999 0.06595073000000014 -0.03125" rpy="1.5707963267948966 -0.0 2.1684043449710093e-19" />
+        <parent link="shoulder_brackets_right" />
+        <child link="upper_limb_assembly_right" />
+        <axis xyz="-0.9999989999999999 7.275392957917223e-35 0.0015739999999995465" />
+        <!-- <limit lower="-0.523599" upper="1.570796" effort="1000000" velocity="1000000" /> -->
+          <limit lower="-0.523599" upper="1.0472" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_arm_rotation" type="revolute">
+        <origin xyz="0.031123060000000147 -0.0044222 -0.23950845999999984" rpy="3.141592653589793 -4.81482486096809e-35 -1.1869459682199748e-66" />
+        <parent link="upper_limb_assembly_right" />
+        <child link="elbow_rot_brack_right" />
+        <axis xyz="-0.0015739999999999999 0.018463999999999998 0.999828" />
+        <limit lower="-1.570796" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_elbow_flexion" type="revolute">
+        <origin xyz="-0.031301419999999996 0.0007797600000000004 0.03294200000000018" rpy="2.710505431213761e-20 4.336808689942018e-19 3.469446951953615e-18" />
+        <parent link="elbow_rot_brack_right" />
+        <child link="forearm_assembly_right" />
+        <axis xyz="-0.999984 0.005454000000000003 -0.0016750000000000003" />
+        <limit lower="-1.570796" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_wrist_rotation" type="revolute">
+        <origin xyz="0.03269331000000001 0.21748784999999998 -0.003965000000000032" rpy="3.141592653589793 6.505213034913027e-19 -3.469446951953614e-18" />
+        <parent link="forearm_assembly_right" />
+        <child link="wrist_rotation_right" />
+        <axis xyz="-0.005484 0.999815 -0.018454999999999878" />
+        <limit lower="-3.14159" upper="1.5708" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_wrist_flexion" type="revolute">
+        <origin xyz="0.02655740999999999 -0.03774926000000001 0.0006553300000000207" rpy="1.651407370702703e-34 -1.5707963267948966 0" />
+        <parent link="wrist_rotation_right" />
+        <child link="right_hand_assembly" />
+        <axis xyz="-0.0016749999999999998 0.005454 -0.999984" />
+        <limit lower="-1.570796" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_index_proximal" type="revolute">
+        <origin xyz="-0.00042278000000010255 -0.12794659000000003 -0.02233809000000001" rpy="2.2018554772122395e-19 -0.1745329251994331 3.141592653589793" />
+        <parent link="right_hand_assembly" />
+        <child link="right_index_proximal" />
+        <axis xyz="-0.16606159263453396 -0.17898699999999998 -0.969735163170173" />
+        <limit lower="0.0" upper="2.094395" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_middle_proximal" type="revolute">
+        <origin xyz="-0.00024562000000003084 -0.13514621 0.005741009999999989" rpy="2.169726083477026e-19 -0.03490658503988704 3.141592653589793" />
+        <parent link="right_hand_assembly" />
+        <child link="right_middle_proximal" />
+        <axis xyz="-0.03255439587666521 -0.04034399999999999 -0.9986552217467777" />
+        <limit lower="0.0" upper="2.094395" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_ring_proximal" type="revolute">
+        <origin xyz="-0.00025948999999997113 -0.13214746 0.03211495999999997" rpy="-2.1736993673801986e-19 -0.06981317007977411 -6.938893903907228e-18" />
+        <parent link="right_hand_assembly" />
+        <child link="right_ring_proximal" />
+        <axis xyz="-0.06999414487472541 -0.06430299999999999 -0.9954723759463424" />
+        <limit lower="0.0" upper="2.094395" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_pinky_proximal" type="revolute">
+        <origin xyz="-0.0003480600000000322 -0.12511867000000002 0.058314369999999977" rpy="-2.201855477212239e-19 -0.1745329251994322 -6.938893903907228e-18" />
+        <parent link="right_hand_assembly" />
+        <child link="right_pinky_proximal" />
+        <axis xyz="-0.1696402883824229 -0.16824499999999998 -0.9710385302497159" />
+        <limit lower="0.0" upper="2.094395" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_ring_inter" type="revolute">
+        <origin xyz="0.0009326583407462863 -0.03989752000000003 0.002712528626344053" rpy="3.767945118659476e-19 0.0698131700797741 6.955837975616637e-18" />
+        <parent link="right_ring_proximal" />
+        <child link="right_ring_inter" />
+        <axis xyz="-0.00038299999999999614 -0.064303 -0.99793" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_middle_inter" type="revolute">
+        <origin xyz="-0.000784836369358004 0.03996867999999999 -0.0013887956224847998" rpy="-1.211557572730205e-19 -0.034906585039887035 -3.141592653589793" />
+        <parent link="right_middle_proximal" />
+        <child link="right_middle_inter" />
+        <axis xyz="-0.0023180000000000006 0.040344 -0.999183" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_pinky_inter" type="revolute">
+        <origin xyz="0.0016692513514122709 -0.03396859999999997 0.00579984014878935" rpy="4.3368086899420173e-19 0.17453292519943217 3.522968763539584e-18" />
+        <parent link="right_pinky_proximal" />
+        <child link="right_pinky_inter" />
+        <axis xyz="0.0015559999999999834 -0.168245 -0.9857440000000002" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_index_inter" type="revolute">
+        <origin xyz="-0.0019149370102110198 0.039382919999999974 -0.006734852216123457" rpy="-1.9556405181584316e-34 -0.17453292519943306 -3.141592653589793" />
+        <parent link="right_index_proximal" />
+        <child link="right_index_inter" />
+        <axis xyz="-0.004854000000000002 0.17898700000000003 -0.9838390000000002" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_index_distal" type="revolute">
+        <origin xyz="0.0004838400000001286 -0.02659511000000002 -0.004637470000000015" rpy="1.8149632776696108e-35 -3.3312111749617124e-17 7.703719777548945e-34" />
+        <parent link="right_index_inter" />
+        <child link="right_index_distal" />
+        <axis xyz="-0.0048540000000000345 0.178987 -0.9838390000000002" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_middle_distal" type="revolute">
+        <origin xyz="0.0004968800000000329 -0.026981480000000033 -0.0008904100000000526" rpy="4.336808689942019e-19 3.042542346537447e-18 0.0" />
+        <parent link="right_middle_inter" />
+        <child link="right_middle_distal" />
+        <axis xyz="-0.0023179999999999976 0.04034399999999999 -0.9991829999999999" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_ring_distal" type="revolute">
+        <origin xyz="0.0005003100000000415 -0.026926649999999983 0.001935280000000006" rpy="0.0 5.512490420730989e-18 -3.469446951953614e-18" />
+        <parent link="right_ring_inter" />
+        <child link="right_ring_distal" />
+        <axis xyz="-0.0003829999999999903 -0.06430299999999999 -0.99793" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_pinky_distal" type="revolute">
+        <origin xyz="0.0004982699999997919 -0.02657679999999999 0.004739760000000004" rpy="-4.3368086899420153e-19 2.9890098642709744e-17 3.469446951953615e-18" />
+        <parent link="right_pinky_inter" />
+        <child link="right_pinky_distal" />
+        <axis xyz="0.0015560000000000118 -0.16824499999999998 -0.9857440000000002" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_wrist_flexion" type="revolute">
+        <origin xyz="0.02634999999999998 0.03790000000000003 0.0" rpy="-3.141592653589793 1.5707963267948966 0" />
+        <parent link="wrist_rotation_left" />
+        <child link="left_hand_assembly" />
+        <axis xyz="-9.066955761194037e-32 0.0 -1.0" />
+        <limit lower="-1.570796" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_index_proximal" type="revolute">
+        <origin xyz="-0.002750000000000057 -0.12925309999999995 0.06674698" rpy="-7.262906803380671e-62 -0.17453292519943306 7.888609052210118e-31" />
+        <parent link="left_hand_assembly" />
+        <child link="left_index_proximal" />
+        <axis xyz="-0.17101011455181445 -0.17364799999999997 -0.9698465536284465" />
+        <limit lower="0.0" upper="2.094395" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_middle_proximal" type="revolute">
+        <origin xyz="-0.002750000000000057 -0.13532944 0.0385267" rpy="-7.1569267357681385e-62 -0.034906585039887035 7.888609052210118e-31" />
+        <parent link="left_hand_assembly" />
+        <child link="left_middle_proximal" />
+        <axis xyz="-0.034878242909009594 -0.03489899999999999 -0.9987821980054411" />
+        <limit lower="0.0" upper="2.094395" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_ring_proximal" type="revolute">
+        <origin xyz="-0.002750000000000057 -0.13143822 0.011960200000000008" rpy="7.170032768834691e-62 -0.0698131700797741 -3.141592653589793" />
+        <parent link="left_hand_assembly" />
+        <child link="left_ring_proximal" />
+        <axis xyz="-0.06958654697408553 -0.06975599999999998 -0.9951339842333913" />
+        <limit lower="0.0" upper="2.094395" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_pinky_proximal" type="revolute">
+        <origin xyz="-0.002750000000000057 -0.12355373 -0.013888870000000005" rpy="7.2629068033806696e-62 -0.17453292519943217 -3.141592653589793" />
+        <parent link="left_hand_assembly" />
+        <child link="left_pinky_proximal" />
+        <axis xyz="-0.1710101145518136 -0.17364799999999997 -0.9698465536284466" />
+        <limit lower="0.0" upper="2.094395" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_index_inter" type="revolute">
+        <origin xyz="0.0012403498317753758 -0.039357579999999996 0.007034373450913379" rpy="1.3909746161656765e-31 0.17453292519943306 1.602060712475388e-30" />
+        <parent link="left_index_proximal" />
+        <child link="left_index_inter" />
+        <axis xyz="-3.074122758890292e-28 -0.173648 -0.984808" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_middle_inter" type="revolute">
+        <origin xyz="5.569436181247056e-05 -0.039968649999999994 0.0015948778512984419" rpy="6.310887241768094e-30 0.034906585039887035 0.0" />
+        <parent link="left_middle_proximal" />
+        <child link="left_middle_inter" />
+        <axis xyz="-1.3807563987118427e-28 -0.034899 -0.999391" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_ring_inter" type="revolute">
+        <origin xyz="-0.00018072088678778187 0.03991652000000002 -0.0025844290875701504" rpy="-5.516252816897782e-32 -0.06981317007977411 -3.141592653589793" />
+        <parent link="left_ring_proximal" />
+        <child link="left_ring_inter" />
+        <axis xyz="-1.3843981516772858e-17 0.069756 -0.997564" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_pinky_inter" type="revolute">
+        <origin xyz="-0.0010061001765843969 0.03401060000000001 -0.005705877640177484" rpy="6.345661607172237e-30 -0.1745329251994322 -3.141592653589793" />
+        <parent link="left_pinky_proximal" />
+        <child link="left_pinky_inter" />
+        <axis xyz="4.7808796692689456e-29 0.173648 -0.984808" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_index_distal" type="revolute">
+        <origin xyz="0.0 -0.026555080000000047 0.004885459999999995" rpy="-4.920540925794206e-58 1.2452663101249085e-31 1.5777218104420236e-30" />
+        <parent link="left_index_inter" />
+        <child link="left_index_distal" />
+        <axis xyz="-3.075636093035347e-28 -0.173648 -0.984808" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_middle_distal" type="revolute">
+        <origin xyz="0.0 -0.026976569999999995 0.00114217" rpy="-6.310887241768095e-30 -6.938893903907057e-18 0.0" />
+        <parent link="left_middle_inter" />
+        <child link="left_middle_distal" />
+        <axis xyz="-6.934668117657654e-18 -0.034899 -0.999391" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_ring_distal" type="revolute">
+        <origin xyz="0.0 -0.02694817999999998 -0.0016839200000000076" rpy="-5.473822126291854e-48 1.3877787807814528e-17 -1.9721522630525286e-31" />
+        <parent link="left_ring_inter" />
+        <child link="left_ring_distal" />
+        <axis xyz="-5.818074747207747e-29 0.069756 -0.997564" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_pinky_distal" type="revolute">
+        <origin xyz="0.0 -0.026624539999999967 -0.0044915400000000005" rpy="-1.2621774483536186e-29 -7.175807270491747e-33 -7.888609052210116e-31" />
+        <parent link="left_pinky_inter" />
+        <child link="left_pinky_distal" />
+        <axis xyz="4.766474578181321e-29 0.173648 -0.9848080000000002" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_thumb_rotation" type="revolute">
+        <origin xyz="-0.0017500000000001137 -0.03378687 0.05999998999999999" rpy="3.141592653589793 1.5707963267948966 0" />
+        <parent link="left_hand_assembly" />
+        <child link="left_thumb_rotation" />
+        <axis xyz="-0.0 0.9999999999999999 0.0" />
+        <limit lower="0.174533" upper="1.884956" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_thumb_proximal" type="revolute">
+        <origin xyz="-0.03519699000000003 0.01607975999999997 0.0015606400000000066" rpy="-1.0472078403685268 0.015517796341080047 3.11472195100403" />
+        <parent link="left_thumb_rotation" />
+        <child link="left_thumb_proximal" />
+        <axis xyz="0.14698158566241443 0.492591988969831 -0.8577583833667313" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="left_thumb_distal" type="revolute">
+        <origin xyz="0.038407445582036744 -0.00892992980451595 0.009847049253334888" rpy="1.5349672324059698 0.5235189773169424 1.5528785047964695" />
+        <parent link="left_thumb_proximal" />
+        <child link="left_thumb_distal" />
+        <axis xyz="0.8576489999999998 -0.49996599999999997 0.12029999999999945" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_thumb_rotation" type="revolute">
+        <origin xyz="-0.0011395400000000677 -0.03376929000000001 -0.00818239000000002" rpy="6.93889390390723e-18 1.5707963267948966 0" />
+        <parent link="right_hand_assembly" />
+        <child link="right_thumb_rotation" />
+        <axis xyz="-0.005484 0.9998149999999999 -0.018455000000000003" />
+        <limit lower="0.174533" upper="1.884956" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_thumb_proximal" type="revolute">
+        <origin xyz="0.03441140999999998 -0.012529980000000017 -0.007388250000000056" rpy="-1.047133008414328 0.014951848183576057 3.1157059013388064" />
+        <parent link="right_thumb_rotation" />
+        <child link="right_thumb_proximal" />
+        <axis xyz="0.1498004902746719 0.5085240200622433 -0.8479164104575418" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="right_thumb_distal" type="revolute">
+        <origin xyz="-0.039484182733696506 0.005341947182984654 -0.0035359940690652537" rpy="-1.5362763703871323 -0.5235987755983521 -1.5880614483966085" />
+        <parent link="right_thumb_proximal" />
+        <child link="right_thumb_distal" />
+        <axis xyz="-0.866527 0.48338099999999995 0.12439" />
+        <limit lower="0.0" upper="1.570796" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="LEFT_TARGET_FRAME_JOINT" type="fixed">
+        <origin xyz="-0.016174030000000103 -0.08848301 0.030736939999999997" rpy="-1.5707963267948966 -1.5707963267948966 0" />
+        <parent link="left_hand_assembly" />
+        <child link="left_target_frame" />
+    </joint>
+    <joint name="RIGHT_TARGET_FRAME_JOINT" type="fixed">
+        <origin xyz="-0.014502650000000018 -0.08888123 0.020802939999999985" rpy="-1.5707963267948966 -1.5707963267948966 0" />
+        <parent link="right_hand_assembly" />
+        <child link="right_target_frame" />
+    </joint>
+</robot>

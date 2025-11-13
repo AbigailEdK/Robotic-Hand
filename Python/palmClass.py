@@ -15,7 +15,6 @@ from scipy import ndimage
 
 # === UTILS ===
 from madgwickUtils import scipyToMadgwick, madgwickToScipy, quatToEulers
-from packetProcessing import unwrapFrame, ema
 
 # endregion
 
@@ -52,8 +51,13 @@ class Palm:
             40: "right_wrist_flexion"
         }
 
+        # === DATA LOGGING ===
+        self.rawDataList = []
+        self.smoothedDataList = []
+        self.jointAnglesList = []
+
 # region Calibration
-    def calibrate(self, samples, timestamps):
+    def calibrate(self, sample_types, flatSamples, flatTimes, rightSamples, rightTimes, leftSamples, leftTimes, upsideDownSamples, upsideDownTimes, fistSamples, fistTimes):
         """
         Parameters
         ----------
@@ -69,16 +73,46 @@ class Palm:
         ValueError
             If the lengths of calibration_positions and calibration_times do not match.
         """
-        
-        self._processSamples(samples, timestamps)
-        self._setAnchorFrame()
 
-        self._resetFilter()
-        self._resetSmoothing()
+        if "flat" in sample_types: 
+            self._processSamples(flatSamples, flatTimes)
+            if self.debug: print("Flat position recorded.")
+            self._setAnchorFrame()
+            self._resetFilter()
+            self._resetSmoothing()
+
+        if "right" in sample_types: 
+            self._processSamples(rightSamples, rightTimes)
+            if self.debug: print("Right tilt position recorded.")
+            self.rightTiltQuat = self.currentWorldOrientation.copy()
+            self._resetFilter()
+            self._resetSmoothing()
+
+        if "left" in sample_types: 
+            self._processSamples(leftSamples, leftTimes)
+            if self.debug: print("Left tilt position recorded.")
+            self.leftTiltQuat = self.currentWorldOrientation.copy()
+            self._resetFilter()
+            self._resetSmoothing()
+
+        if "upside_down" in sample_types: 
+            self._processSamples(upsideDownSamples, upsideDownTimes)
+            if self.debug: print("Upside down position recorded.")
+            self.upsidedownTiltQuat = self.currentWorldOrientation.copy()
+            self._resetFilter()
+            self._resetSmoothing()
+
+        if "fist" in sample_types: 
+            self._processSamples(fistSamples, fistTimes)
+            if self.debug: print("Fist position recorded.")
+            self.fistQuat = self.currentWorldOrientation.copy()
+            self._resetFilter()
+            self._resetSmoothing()
+        
+        self.isCalibrated = True
 
     def _setAnchorFrame(self):
         self.CalibrationFrame = self.currentWorldOrientation
-        self.isCalibrated = True
 
     def _processSamples(self, samples, timestamps):
         for i, frame in enumerate(samples):
@@ -137,9 +171,11 @@ class Palm:
 # endregion
 
 # region Joint Angles
-    def palmJointAngles(self, rawData):
+    def getJointAngles(self, rawData):
         # > Smooth incoming raw data
+        self.rawDataList.append(rawData)
         rawDataSmoothed = self._smoothRawData(rawData)
+        self.smoothedDataList.append(rawDataSmoothed)
 
         # > Update filter with smoothed data
         self._updateMadgwick(rawDataSmoothed)
@@ -151,8 +187,8 @@ class Palm:
 
     def _computeJointAngles(self):
         slerpedQuat = self._slerpQuats(self.currentCalibratedOrientation, self.previousCalibratedOrientation, 0.5)
+        
         wrist_rotation, wrist_flexion, _ = quatToEulers(slerpedQuat)
-
         wrist_rotation, wrist_flexion = self._deadband(wrist_rotation, wrist_flexion)
         wrist_rotation, wrist_flexion = self._clipToRanges(wrist_rotation, wrist_flexion)
 
@@ -184,17 +220,14 @@ class Palm:
 
 # region Smoothing
     def _smoothRawData(self, rawData):
-        if self.RawSmoothingFunction is None:
-            return rawData
-
         rawAcc = rawData[0:3]
         rawGyro = rawData[3:6]
         rawMag = rawData[6:9]
 
         # Apply EMA smoothing to each component
-        smoothedAcc = ema(rawAcc, self.prevAcc, self.accAlpha)
-        smoothedGyro = ema(rawGyro, self.prevGyro, self.gyroAlpha)
-        smoothedMag = ema(rawMag, self.prevMag, self.magAlpha)
+        smoothedAcc = self._ema(rawAcc, self.prevAcc, self.accAlpha)
+        smoothedGyro = self._ema(rawGyro, self.prevGyro, self.gyroAlpha)
+        smoothedMag = self._ema(rawMag, self.prevMag, self.magAlpha)
         
         # Update previous values for next iteration
         self.prevAcc = smoothedAcc.copy()
@@ -205,6 +238,9 @@ class Palm:
         smoothedData = np.concatenate([smoothedAcc, smoothedGyro, smoothedMag])
         
         return smoothedData
+    
+    def _ema(self, current_data, previous_data, alpha):
+            return alpha * current_data + (1 - alpha) * previous_data
     
     def _resetSmoothing(self):
         self.prevAcc = np.zeros(3)
@@ -218,3 +254,136 @@ class Palm:
         return r_interp.as_quat()
 
 # endregion
+
+# region Data Logging
+    def saveDataToCSV(self, filename):
+        """Save data and joint angles to a CSV file."""
+        with open(filename, mode='w', newline='') as f:
+            writer = csv.writer(f)
+            # Header
+            writer.writerow(["raw_Ax", "raw_Ay", "raw_Az", "raw_Gx", "raw_Gy", "raw_Gz", "raw_Mx", "raw_My", "raw_Mz", "smoothed_Ax", "smoothed_Ay", "smoothed_Az", "smoothed_Gx", "smoothed_Gy", "smoothed_Gz", "smoothed_Mx", "smoothed_My", "smoothed_Mz", "Wrist_Rotation", "Wrist_Flexion"])
+            # Write data
+            for rawData, smoothedData, jointAngles in zip(self.rawDataList, self.smoothedDataList, self.jointAnglesList):
+                row = list(rawData) + list(smoothedData) + [jointAngles[39], jointAngles[40]]
+                writer.writerow(row)
+        print(f"Data saved to {filename}.")
+
+    def plotDataFromCSV(self, filename):
+        """Plot data and joint angles from a CSV file."""
+        with open(filename, mode='r') as f:
+            reader = csv.DictReader(f)
+            raw_Ax, raw_Ay, raw_Az = [], [], []
+            raw_Gx, raw_Gy, raw_Gz = [], [], []
+            raw_Mx, raw_My, raw_Mz = [], [], []
+            smoothed_Ax, smoothed_Ay, smoothed_Az = [], [], []
+            smoothed_Gx, smoothed_Gy, smoothed_Gz = [], [], []
+            smoothed_Mx, smoothed_My, smoothed_Mz = [], [], []
+            wrist_rotation, wrist_flexion = [], []
+
+            for row in reader:
+                raw_Ax.append(float(row["raw_Ax"]))
+                raw_Ay.append(float(row["raw_Ay"]))
+                raw_Az.append(float(row["raw_Az"]))
+                raw_Gx.append(float(row["raw_Gx"]))
+                raw_Gy.append(float(row["raw_Gy"]))
+                raw_Gz.append(float(row["raw_Gz"]))
+                raw_Mx.append(float(row["raw_Mx"]))
+                raw_My.append(float(row["raw_My"]))
+                raw_Mz.append(float(row["raw_Mz"]))
+                smoothed_Ax.append(float(row["smoothed_Ax"]))
+                smoothed_Ay.append(float(row["smoothed_Ay"]))
+                smoothed_Az.append(float(row["smoothed_Az"]))
+                smoothed_Gx.append(float(row["smoothed_Gx"]))
+                smoothed_Gy.append(float(row["smoothed_Gy"]))
+                smoothed_Gz.append(float(row["smoothed_Gz"]))
+                smoothed_Mx.append(float(row["smoothed_Mx"]))
+                smoothed_My.append(float(row["smoothed_My"]))
+                smoothed_Mz.append(float(row["smoothed_Mz"]))
+                wrist_rotation.append(float(row["Wrist_Rotation"]))
+                wrist_flexion.append(float(row["Wrist_Flexion"]))
+
+        # === Plot raw sensor data ===
+        plt.figure(figsize=(15, 12))
+
+        # Accelerometer data
+        plt.subplot(3, 3, 1)
+        plt.plot(raw_Ax, label="Raw Ax")
+        plt.plot(smoothed_Ax, label="Smoothed Ax")
+        plt.legend()
+        plt.title("Accelerometer X-axis")
+
+        plt.subplot(3, 3, 4)
+        plt.plot(raw_Ay, label="Raw Ay")
+        plt.plot(smoothed_Ay, label="Smoothed Ay")
+        plt.legend()
+        plt.title("Accelerometer Y-axis")
+
+        plt.subplot(3, 3, 7)
+        plt.plot(raw_Az, label="Raw Az")
+        plt.plot(smoothed_Az, label="Smoothed Az")
+        plt.legend()
+        plt.title("Accelerometer Z-axis")
+
+        # Gyroscope data
+        plt.subplot(3, 3, 2)
+        plt.plot(raw_Gx, label="Raw Gx")
+        plt.plot(smoothed_Gx, label="Smoothed Gx")
+        plt.legend()
+        plt.title("Gyroscope X-axis")
+
+        plt.subplot(3, 3, 5)
+        plt.plot(raw_Gy, label="Raw Gy")
+        plt.plot(smoothed_Gy, label="Smoothed Gy")
+        plt.legend()
+        plt.title("Gyroscope Y-axis")
+
+        plt.subplot(3, 3, 8)
+        plt.plot(raw_Gz, label="Raw Gz")
+        plt.plot(smoothed_Gz, label="Smoothed Gz")
+        plt.legend()
+        plt.title("Gyroscope Z-axis")
+
+        # Magnetometer data
+        plt.subplot(3, 3, 3)
+        plt.plot(raw_Mx, label="Raw Mx")
+        plt.plot(smoothed_Mx, label="Smoothed Mx")
+        plt.legend()
+        plt.title("Magnetometer X-axis")
+
+        plt.subplot(3, 3, 6)
+        plt.plot(raw_My, label="Raw My")
+        plt.plot(smoothed_My, label="Smoothed My")
+        plt.legend()
+        plt.title("Magnetometer Y-axis")
+
+        plt.subplot(3, 3, 9)
+        plt.plot(raw_Mz, label="Raw Mz")
+        plt.plot(smoothed_Mz, label="Smoothed Mz")
+        plt.legend()
+        plt.title("Magnetometer Z-axis")
+
+        plt.tight_layout()
+        plt.show()
+
+        # === Plot joint angles ===
+        plt.figure(figsize=(12, 6))
+        
+        # Plot wrist rotation angles
+        plt.subplot(2, 1, 1)
+        plt.plot(wrist_rotation, label="Wrist Rotation", color="blue")
+        plt.legend()
+        plt.title("Wrist Rotation Angle")
+        plt.xlabel("Sample")
+        plt.ylabel("Angle (radians)")
+        
+        # Plot wrist flexion angles
+        plt.subplot(2, 1, 2)
+        plt.plot(wrist_flexion, label="Wrist Flexion", color="green")
+        plt.legend()
+        plt.title("Wrist Flexion Angle")
+        plt.xlabel("Sample")
+        plt.ylabel("Angle (radians)")
+        
+        plt.tight_layout()
+        plt.show()
+    # endregion

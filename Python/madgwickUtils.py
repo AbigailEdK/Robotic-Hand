@@ -6,7 +6,7 @@ def scipyToMadgwick(scipyQuat):
     x = scipyQuat[1]
     y = scipyQuat[2]
     z = scipyQuat[3]
-    madgwickQuat = [x, y, z, w]
+    madgwickQuat = np.array([x, y, z, w])
     return madgwickQuat
 
 def madgwickToScipy(madgwickQuat):
@@ -14,7 +14,7 @@ def madgwickToScipy(madgwickQuat):
     y = madgwickQuat[1]
     z = madgwickQuat[2]
     w = madgwickQuat[3]
-    scipyQuat = [w, x, y, z]
+    scipyQuat = np.array([w, x, y, z])
     return scipyQuat
 
 def quatToEulers(quat):
